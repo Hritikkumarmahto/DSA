@@ -1,0 +1,24 @@
+ARRAY:-
+    array<int,4> a={1,2,3,4};
+    cout<<"element at location 2"<<a.at(2)<<endl;
+
+    cout<<"element at last"<<a.back<<endl;
+
+    cout<<"array at first"<a.front<<endl;
+
+    cout<<"empty or not"<<a.empty;
+
+--------------------------------------------------------------------
+VECTOR:-
+    vector:-supports dynamic allocation 
+        will creat 2X memory then before and previous will be dead
+
+        vector<int> v;
+        cout<<"size"<<v.capacity()<<endl;  // will  check the capacity
+
+        v.push_back(1);
+        cout<<"now capacity will be 1";
+
+        v.push_back(2);
+        cout<<"now capacity will be 2";
+
