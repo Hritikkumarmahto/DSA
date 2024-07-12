@@ -15,9 +15,10 @@ public:
 int main()
 {
     Node *head = nullptr;
+    Node *tail = nullptr;
+
     int n;
     cin >> n;
-
     int arr[n];
     for (int i = 0; i < n; i++)
     {
@@ -29,21 +30,24 @@ int main()
         if (head == nullptr)
         {
             head = new Node(arr[i]);
+            tail = head;
         }
         else
         {
             Node *temp = new Node(arr[i]);
-            temp->next = head;
-            head = temp;
+            tail->next = temp;
+            tail = temp;
         }
     }
-    Node *current = head;
 
-    while (head != nullptr)
+    Node *current = head;
+    while (current != nullptr)
     {
         cout << current->data << " ";
         current = current->next;
     }
+    cout << endl;
+    // to delete the allocated memory
     current = head;
     while (current != nullptr)
     {
@@ -51,6 +55,5 @@ int main()
         delete current;
         current = nextNode;
     }
-
     return 0;
 }

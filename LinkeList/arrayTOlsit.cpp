@@ -44,7 +44,7 @@ int main()
         current = current->next;
     }
     cout << endl;
-//to delete the allocated memory
+    // to delete the allocated memory
     current = head;
     while (current != nullptr)
     {
