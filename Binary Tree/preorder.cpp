@@ -21,9 +21,30 @@ void preorder(Node *node)
     {
         return;
     }
-    cout << node->data;
+    cout << node->data << " ";
     preorder(node->left);
     preorder(node->right);
+}
+void inorder(Node *node)
+{
+    if (node == NULL)
+    {
+        return;
+    }
+    inorder(node->left);
+    cout << node->data << " ";
+    inorder(node->right);
+}
+
+void PostOrder(Node *node)
+{
+    if (node == NULL)
+    {
+        return;
+    }
+    PostOrder(node->left);
+    PostOrder(node->right);
+    cout << node->data << " ";
 }
 int main()
 {
@@ -33,9 +54,19 @@ int main()
 
     root->right = new Node(3);
 
-    cout << "Normal tree     ";
-    cout << root->left->data << " " << root->data << " " << root->right->data << endl;
+    root->left->left = new Node(4);
 
-    cout << "preOrdertee   ";
+    cout << "Normal tree     ";
+    cout << root->left->data << " " << root->data << " " << root->right->data << " " << root->left->left->data;
+    cout << endl;
+    cout << "preOrdertree   ";
     preorder(root);
+    cout << endl;
+    cout << "InOrder ";
+    inorder(root);
+
+    cout << endl;
+    cout << "Postorder ";
+
+    PostOrder(root);
 }
