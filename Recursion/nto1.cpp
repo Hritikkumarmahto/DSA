@@ -1,21 +1,23 @@
 #include <iostream>
 using namespace std;
 
-int n = 10;
 int i = 0;
 
-void N_toONe()
+void N_toONe(int n)
 {
   if (n == i)
   {
     return;
   }
   cout << n << " ";
-  n--;
-  N_toONe();
+  //n--;
+  N_toONe(n-1);
 }
 int main()
 {
-  N_toONe();
+  int n;
+  cout << "enter n";
+  cin >> n;
+  N_toONe(n);
   return 0;
 }
